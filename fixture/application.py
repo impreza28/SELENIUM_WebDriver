@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import allure
 from fixture.session import SessionHelper
+from fixture.admin_panel import AdminPanelHelper
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -22,6 +23,7 @@ class Application:
         self.vars = {}
         self.session = SessionHelper(self)
         self.base_url = base_url
+        self.admin_panel= AdminPanelHelper(self)
 
     def destroy(self):
         self.wd.quit()
