@@ -8,7 +8,7 @@ def test_stickers_check_in_catalog(app):
     items = app.catalog.find_all_items_from_catalog()
     for item in items:
             sticker = item.find_elements(By.XPATH, ".//div[starts-with(@class,'sticker')]")
-            assert len(sticker) == 1, "Количество стикеров у товара больше 1"
+            assert len(sticker) == 1, "Количество стикеров у товара != 1"
 
             all_stickers = all_stickers + len(sticker)
 
