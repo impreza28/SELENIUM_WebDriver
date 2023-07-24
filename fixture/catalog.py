@@ -9,6 +9,14 @@ class CatalogHelper:
     def __init__(self, app):
         self.app = app
 
+    def find_all_items_from_catalog(self):
+        wd = self.app.wd
+        return wd.find_elements(By.XPATH, ".//ul[@class='listing-wrapper products']//li")
+
+    def find_sticker_new(self):
+        wd = self.app.wd
+        return wd.find_element(By.CSS_SELECTOR, ".sticker.new")
+
     def count_all_stickers(self):
         wd = self.app.wd
         sum_stickers = self.count_stickers_new() + self.count_stickers_sale()
