@@ -69,3 +69,7 @@ class SessionHelper:
             else:
                 self.logout_from_catalog()
         self.login_in_catalog(username, password)
+
+    def wait_5s(self):
+        wd = self.app.wd
+        wd.implicitly_wait(5)

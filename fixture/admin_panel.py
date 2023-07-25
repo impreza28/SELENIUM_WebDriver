@@ -11,6 +11,16 @@ class AdminPanelHelper:
     def __init__(self, app):
         self.app = app
 
+    def get_all_submenu(self):
+        wd = self.app.wd
+        all_submenu = wd.find_elements(By.XPATH, '//ul[@class="docs"]/li')
+        return all_submenu
+
+    def get_all_menu(self):
+        wd = self.app.wd
+        allmenu = wd.find_elements(By.XPATH, "//span[@class='name']")
+        return allmenu
+
     def open_section_Appearence_Template(self):
         wd = self.app.wd
         wd.find_element(By.XPATH,

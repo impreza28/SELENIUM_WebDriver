@@ -46,6 +46,8 @@ class Application:
         WebDriverWait(wd, 10).until(lambda x: x.find_element(By.NAME, "login"))
 
 
+
+
     def is_valid(self):
         try:
             self.wd.current_url
